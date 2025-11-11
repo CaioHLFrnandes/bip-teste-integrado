@@ -1,0 +1,27 @@
+
+    <div class="modal-container">
+        <h2>Transferir de {{fromIdName}}</h2>
+
+        <div class="form-group">
+            <label for="toId">Destino</label>
+            <select id="toId" [(ngModel)]="toId">
+                <option *ngFor="let b of beneficiarios" [value]="b.id">
+                    {{ b.titular }}
+                </option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="amount">Valor</label>
+            <input id="amount" type="number" step="0.01" [(ngModel)]="amount" placeholder="0.00"/>
+        </div>
+
+        <div *ngIf="error" class="error">{{error}}</div>
+
+        <div class="actions">
+            <button class="btn btn-secondary" (click)="cancel()">Fechar</button>
+            <button class="btn btn-primary" (click)="send()" [disabled]="loading">
+                {{loading ? 'Enviando...' : 'Enviar'}}
+            </button>
+        </div>
+    </div>

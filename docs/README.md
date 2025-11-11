@@ -1,34 +1,41 @@
-# 🏗️ Desafio Fullstack Integrado
+# BIP – Desafio Fullstack Integrado
 
-## 🎯 Objetivo
-Criar solução completa em camadas (DB, EJB, Backend, Frontend), corrigindo bug em EJB e entregando aplicação funcional.
+Este projeto implementa o desafio proposto, reestruturando a aplicação em um único módulo **Spring Boot**, seguindo boas práticas de arquitetura (DDD + Clean Architecture).  
+O objetivo é integrar as camadas: banco de dados, regras de negócio, API REST e frontend.
 
-## 📦 Estrutura
-- db/: scripts schema e seed
-- ejb-module/: serviço EJB com bug a ser corrigido
-- backend-module/: backend Spring Boot
-- frontend/: app Angular
-- docs/: instruções e critérios
-- .github/workflows/: CI
+---
 
-## ✅ Tarefas do candidato
-1. Executar db/schema.sql e db/seed.sql
-2. Corrigir bug no BeneficioEjbService
-3. Implementar backend CRUD + integração com EJB
-4. Desenvolver frontend Angular consumindo backend
-5. Implementar testes
-6. Documentar (Swagger, README)
-7. Submeter via fork + PR
+## ✅ Objetivos
 
-## 🐞 Bug no EJB
-- Transferência não verifica saldo, não usa locking, pode gerar inconsistência
-- Espera-se correção com validações, rollback, locking/optimistic locking
+- Criar arquitetura escalável em um único módulo Spring
+- Corrigir bug de transferência no domínio de Benefícios
+- Implementar CRUD + operações de transferência
+- Expor API com Swagger
+- Criar testes
+- Documentar
 
-## 📊 Critérios de avaliação
-- Arquitetura em camadas (20%)
-- Correção EJB (20%)
-- CRUD + Transferência (15%)
-- Qualidade de código (10%)
-- Testes (15%)
-- Documentação (10%)
-- Frontend (10%)
+---
+
+yaml
+
+✅ **Camadas isoladas**  
+✅ **Domínio sem dependência de framework**  
+✅ **Ports/Adapters**  
+✅ **Alta testabilidade**
+
+---
+
+## ✅ Tecnologias
+
+| Categoria      | Tecnologias |
+|----------------|-------------|
+| Core           | Spring Boot |
+| BD             | PostgreSQL / H2 |
+| ORM            | Spring Data JPA |
+| Migração       | Flyway |
+| Docs API       | SpringDoc Swagger |
+| Testes         | JUnit + Mockito |
+
+---
+✅ Autor
+Desafio desenvolvido por Caio Henrique
